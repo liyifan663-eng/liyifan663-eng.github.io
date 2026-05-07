@@ -3,704 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>李轶凡 — 后期制片 · AI导演 · 剪辑指导</title>
-    <meta name="description" content="9年院线级视听履历与前沿AI生成技术的深度融合。后期制片、AI导演、剪辑指导。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <title>李轶凡 | 后期制片 · AI导演 · 剪辑指导</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
         :root {
-            --bg-base: #F4F1EA;
-            --bg-alt: #EBE7DC;
+            --bg-base: #F4F1EA; 
             --text-main: #141414;
-            --text-muted: #5A5A5A;
+            --text-muted: #666;
             --accent: #B83A26;
-            --border-light: #D5D1C7;
-            --border-dark: #141414;
+            --border: #D5D1C7;
             --space-section: 8rem 5%;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-base); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .serif { font-family: 'Noto Serif SC', serif; }
+        a { color: inherit; text-decoration: none; transition: 0.3s; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        .container { max-width: 1440px; margin: 0 auto; }
 
-        body {
-            background-color: var(--bg-base);
-            color: var(--text-main);
-            font-family: 'Inter', "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+        /* Hero */
+        #hero { min-height: 80vh; padding: 6rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; }
+        .hero-name { font-size: clamp(4rem, 10vw, 9rem); font-weight: 900; line-height: 1; letter-spacing: -0.02em; }
+        .hero-role { font-size: 1.5rem; color: var(--text-muted); margin: 1.5rem 0 4rem; letter-spacing: 0.2em; text-transform: uppercase; }
+        .hero-flex { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: end; }
+        .hero-value { font-size: clamp(1.2rem, 2vw, 1.8rem); font-weight: 400; max-width: 800px; }
+        .cta-btn { padding: 1rem 2.5rem; background: var(--text-main); color: var(--bg-base); border-radius: 50px; font-weight: 500; display: inline-block; }
 
-        h1, h2, h3, h4, .serif {
-            font-family: 'Noto Serif SC', 'Songti SC', STSong, serif;
-        }
+        /* Poster Gallery - 作品展示核心区 */
+        #work { padding: var(--space-section); }
+        .section-title { font-size: 3rem; font-weight: 900; margin-bottom: 4rem; border-bottom: 2px solid var(--text-main); padding-bottom: 1rem; display: flex; justify-content: space-between; align-items: flex-end; }
+        .section-title span { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
 
-        a {
-            color: var(--text-main);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
+        .work-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 3rem; }
+        
+        .work-card { position: relative; overflow: hidden; background: #eee; transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1); }
+        .work-card:hover { transform: translateY(-10px); }
+        
+        /* 海报容器 */
+        .poster-wrapper { width: 100%; aspect-ratio: 2/3; overflow: hidden; background-color: #ddd; position: relative; }
+        .poster-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .work-card:hover .poster-wrapper img { transform: scale(1.05); }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .work-info { padding: 1.5rem 0; }
+        .work-cat { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.5rem; }
+        .work-name { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .work-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .tag { font-size: 0.7rem; padding: 0.2rem 0.6rem; border: 1px solid var(--border); border-radius: 4px; color: var(--text-muted); }
 
-        /* 1. Hero Section */
-        #hero {
-            min-height: 95vh;
-            padding: 6rem 5% 4rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+        /* Experience */
+        #experience { padding: var(--space-section); background: #EBE7DC; }
+        .exp-item { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; padding: 3rem 0; border-bottom: 1px solid var(--border); }
+        .exp-item h3 { font-size: 1.8rem; margin-bottom: 1rem; }
 
-        .hero-top {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .hero-name {
-            font-size: clamp(5rem, 12vw, 11rem);
-            font-weight: 900;
-            line-height: 0.9;
-            letter-spacing: -0.03em;
-            margin-bottom: 1.5rem;
-            margin-left: -0.5vw;
-        }
-
-        .hero-role {
-            font-size: clamp(1.2rem, 2.5vw, 2rem);
-            color: var(--text-muted);
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 5rem;
-            align-items: end;
-            margin-top: auto;
-            padding-top: 4rem;
-        }
-
-        .hero-value {
-            font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-            line-height: 1.4;
-            font-weight: 500;
-        }
-
-        .hero-action {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 2.5rem;
-        }
-
-        .proof-list {
-            list-style: none;
-            border-left: 1px solid var(--border-dark);
-            padding-left: 1.5rem;
-        }
-
-        .proof-list li {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-bottom: 0.8rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            position: relative;
-        }
-
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.2rem 3rem;
-            background-color: var(--text-main);
-            color: var(--bg-base);
-            font-size: 1.1rem;
-            border-radius: 100px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            border: 1px solid var(--text-main);
-            cursor: pointer;
-        }
-
-        .cta-btn:hover {
-            background-color: transparent;
-            color: var(--text-main);
-        }
-
-        /* 2. Proof Strip */
-        #proof-strip {
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .strip-item {
-            font-size: 0.95rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .strip-item::before {
-            content: '';
-            display: block;
-            width: 6px;
-            height: 6px;
-            background-color: var(--accent);
-            border-radius: 50%;
-        }
-
-        /* 3. Featured Results */
-        #work {
-            padding: var(--space-section);
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 2px solid var(--border-dark);
-        }
-
-        .section-header h2 {
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            line-height: 1;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-
-        .section-header span {
-            font-size: 1rem;
-            color: var(--text-muted);
-            letter-spacing: 0.1em;
-        }
-
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 4rem;
-        }
-
-        .work-card {
-            display: flex;
-            flex-direction: column;
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: 2.5rem;
-        }
-
-        .work-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .work-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 0.8rem;
-        }
-
-        .work-role {
-            font-size: 1.1rem;
-            font-style: italic;
-            color: var(--text-main);
-            margin-bottom: 1.5rem;
-            font-family: 'Noto Serif SC', serif;
-        }
-
-        .work-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: auto;
-        }
-
-        .work-tags span {
-            font-size: 0.8rem;
-            padding: 0.3rem 0.8rem;
-            border: 1px solid var(--border-light);
-            border-radius: 50px;
-            color: var(--text-muted);
-            background-color: rgba(255,255,255,0.2);
-        }
-
-        /* 4. Experience */
-        #experience {
-            padding: var(--space-section);
-            background-color: var(--bg-alt);
-        }
-
-        .exp-container {
-            border-top: 1px solid var(--border-light);
-        }
-
-        .exp-row {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            gap: 4rem;
-            padding: 4rem 0;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .exp-time {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-        }
-
-        .exp-company {
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .exp-content h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .exp-desc {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            max-width: 800px;
-        }
-
-        .exp-projects {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .exp-projects p {
-            font-size: 1.05rem;
-            line-height: 1.6;
-        }
-
-        .exp-projects strong {
-            font-weight: 600;
-            color: var(--text-main);
-            margin-right: 0.5rem;
-            font-family: 'Noto Serif SC', serif;
-        }
-
-        /* 5. About */
-        #about {
-            padding: var(--space-section);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 6rem;
-            align-items: start;
-        }
-
-        .about-text {
-            font-size: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .about-text p {
-            margin-bottom: 2rem;
-        }
-
-        .about-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        .skills-section {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-        }
-
-        .skill-group h4 {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: 0.5rem;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .skill-group ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .skill-group li {
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        /* 6. Contact */
-        #contact {
-            padding: 8rem 5% 4rem;
-            background-color: var(--text-main);
-            color: var(--bg-base);
-            text-align: center;
-        }
-
-        .contact-title {
-            font-size: clamp(3.5rem, 8vw, 7rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 4rem;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 4rem;
-            margin-bottom: 8rem;
-        }
-
-        .contact-links a, .contact-links span {
-            color: var(--bg-base);
-            font-size: 1.25rem;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .contact-links a {
-            position: relative;
-        }
-
-        .contact-links a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--bg-base);
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-out;
-        }
-
-        .contact-links a:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
-        .footer-credits {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid rgba(244, 241, 234, 0.2);
-            padding-top: 2rem;
-            font-size: 0.85rem;
-            color: rgba(244, 241, 234, 0.6);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-            }
-        }
+        /* Contact */
+        #contact { padding: 6rem 5%; background: var(--text-main); color: var(--bg-base); text-align: center; }
+        .contact-big { font-size: clamp(3rem, 7vw, 6rem); font-weight: 900; margin-bottom: 3rem; }
+        .contact-details { display: flex; justify-content: center; gap: 3rem; font-size: 1.2rem; }
 
         @media (max-width: 768px) {
-            .exp-row {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                padding: 3rem 0;
-            }
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            .contact-links {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            .footer-credits {
-                flex-direction: column;
-                gap: 1rem;
-            }
+            .hero-flex { grid-template-columns: 1fr; }
+            .exp-item { grid-template-columns: 1fr; }
+            .contact-details { flex-direction: column; gap: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. Hero -->
     <header id="hero" class="container">
         <div class="hero-top">
             <h1 class="hero-name serif">李轶凡</h1>
-            <div class="hero-role">后期制片 · AI导演 · 剪辑指导</div>
+            <p class="hero-role">后期制片 · AI导演 · 剪辑指导</p>
         </div>
-        <div class="hero-content">
-            <div class="hero-value serif">
-                9年院线级视听履历与前沿AI生成技术的深度融合。跨越传统影视全工业管线与AIGC自动化创制，兼具计算机科学底蕴与导演级叙事张力，以实拍级美学重构内容生产力。
-            </div>
-            <div class="hero-action">
-                <ul class="proof-list">
-                    <li>9年影视后期与全流程制片经验</li>
-                    <li>数十部S级院线电影及热播剧集交付质控</li>
-                    <li>跑通AIGC影视化与25帧自动化分镜工业流</li>
-                </ul>
-                <a href="#contact" class="cta-btn">发起合作洽谈</a>
+        <div class="hero-flex">
+            <p class="hero-value serif">
+                9年影视工业经验与AIGC技术的先锋实践者。从院线大片的全流程质控，到AI漫剧的自动化管线构建，我致力于用算法与美学重塑影像。
+            </p>
+            <div style="text-align: right;">
+                <a href="#contact" class="cta-btn">合作洽谈</a>
             </div>
         </div>
     </header>
 
-    <!-- 2. Proof Strip -->
-    <div id="proof-strip">
-        <div class="strip-item">院线级统筹交付标准</div>
-        <div class="strip-item">AIGC 编导与创制体系</div>
-        <div class="strip-item">计算机专业硬核底座</div>
-        <div class="strip-item">实拍级电影感美学把控</div>
-    </div>
-
-    <!-- 3. Featured Results -->
     <section id="work" class="container">
-        <div class="section-header">
-            <h2 class="serif">Selected Works</h2>
-            <span>[ 核心代表作矩阵 ]</span>
+        <div class="section-title">
+            <h2 class="serif">SELECTED WORKS</h2>
+            <span>作品集海报展</span>
         </div>
+
         <div class="work-grid">
-            <!-- Work 1 -->
-            <article class="work-card">
-                <div class="work-meta">前沿 AIGC 漫剧/剧集</div>
-                <h3 class="work-title serif">《编外鬼使》<br>《蝉3304：实控人》</h3>
-                <div class="work-role">AI导演 / AI剪辑师</div>
-                <div class="work-tags">
-                    <span>红果已上线</span>
-                    <span>AI分镜网格生成</span>
-                    <span>三视图资产高一致性</span>
+            <!-- 1. AI 漫剧 -->
+            <div class="work-card">
+                <div class="poster-wrapper">
+                    <!-- 此处可替换为《编外鬼使》真实海报链接 -->
+                    <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=800" alt="编外鬼使">
                 </div>
-            </article>
-
-            <!-- Work 2 -->
-            <article class="work-card">
-                <div class="work-meta">最新影视剧集 (已上线/待播)</div>
-                <h3 class="work-title serif">《金刚不坏》<br>《灼灼韶华》《醒来》</h3>
-                <div class="work-role">后期制片</div>
-                <div class="work-tags">
-                    <span>全流程统筹</span>
-                    <span>进度与质检管理</span>
-                    <span>跨部门协同</span>
+                <div class="work-info">
+                    <p class="work-cat">AIGC / 漫剧</p>
+                    <h3 class="work-name">《编外鬼使》</h3>
+                    <div class="work-tags"><span class="tag">AI导演</span><span class="tag">红果上线</span></div>
                 </div>
-            </article>
-
-            <!-- Work 3 -->
-            <article class="work-card">
-                <div class="work-meta">院线电影 / 视觉巨制</div>
-                <h3 class="work-title serif">《深海》《莫斯科行动》<br>《巨齿鲨2》</h3>
-                <div class="work-role">后期制作统筹</div>
-                <div class="work-tags">
-                    <span>特效把控</span>
-                    <span>调色审查</span>
-                    <span>工业化管线管理</span>
-                </div>
-            </article>
-
-            <!-- Work 4 -->
-            <article class="work-card">
-                <div class="work-meta">S级古装 / 现代剧集</div>
-                <h3 class="work-title serif">《藏海传》《护心》<br>《追光者》</h3>
-                <div class="work-role">后期制作统筹</div>
-                <div class="work-tags">
-                    <span>多集连载把控</span>
-                    <span>复盘优化迭代</span>
-                </div>
-            </article>
-
-            <!-- Work 5 -->
-            <article class="work-card">
-                <div class="work-meta">院线纪实 / 动作电影</div>
-                <h3 class="work-title serif">《黄大年》《樵夫廖俊波》<br>《极速战将》</h3>
-                <div class="work-role">剪辑师 / 全流程管理</div>
-                <div class="work-tags">
-                    <span>剧本二次创作</span>
-                    <span>情绪叙事定剪</span>
-                    <span>跟组采集转码</span>
-                </div>
-            </article>
-
-            <!-- Work 6 -->
-            <article class="work-card">
-                <div class="work-meta">独立视觉 / 概念企划开发</div>
-                <h3 class="work-title serif">《藏锋》(导演剪辑版)<br>《THE KARATE WEIRDO》</h3>
-                <div class="work-role">视觉开发 / AI创作</div>
-                <div class="work-tags">
-                    <span>20-shot微镜头语言</span>
-                    <span>角色服化道差异化构建</span>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- 4. Experience -->
-    <section id="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="serif">Experience</h2>
-                <span>[ 职业履历 ]</span>
             </div>
-            <div class="exp-container">
 
-                <!-- Current Job -->
-                <div class="exp-row">
-                    <div>
-                        <div class="exp-time">2023.01 – 至今</div>
-                        <div class="exp-company">现任影视 / 科技公司</div>
-                    </div>
-                    <div class="exp-content">
-                        <h3 class="serif">后期制片 & AI导演 & AI剪辑师</h3>
-                        <p class="exp-desc">双轨推进传统影视项目的后期管线与前沿AIGC内容的创制研发。将AI大模型深度接入实际业务，主导公司自产内容的视觉开发与生成制作，大幅提升视听表现力与生产效率。</p>
-                        <div class="exp-projects">
-                            <p><strong>AIGC创制：</strong>主导自产AI漫剧《编外鬼使》（已上线红果，任AI导演及剪辑师）；担任AI剧集《蝉3304：实控人》AI剪辑师。</p>
-                            <p><strong>影视剧集（已上线）：</strong>统筹电影《金刚不坏》，电视剧《灼灼韶华》《叵测》《风过留痕》《大河之水》等。</p>
-                            <p><strong>影视剧集（待播中）：</strong>负责电视剧《醒来》《暗夜之光》《漂洋过海来送你》后期制片。</p>
-                        </div>
-                    </div>
+            <!-- 2. 电影深海 -->
+            <div class="work-card">
+                <div class="poster-wrapper">
+                    <img src="https://img9.doubanio.com/view/photo/l/public/p2886021467.jpg" alt="电影深海">
                 </div>
-
-                <!-- Job 2 -->
-                <div class="exp-row">
-                    <div>
-                        <div class="exp-time">2022.01 – 2023</div>
-                        <div class="exp-company">兔将视觉技术 (北京)</div>
-                    </div>
-                    <div class="exp-content">
-                        <h3 class="serif">后期制作统筹</h3>
-                        <p class="exp-desc">深度对接本公司与外部合作方，主控特效、调色、质检等核心后期环节。根据制片方需求与实际工期精细化把控进度，发现并击破团队协作堵点，建立复盘机制持续优化管线。</p>
-                        <div class="exp-projects">
-                            <p><strong>院线电影项目：</strong>《莫斯科行动》《深海》《大雨》《传说》《画江湖之不良人》《巨齿鲨2》等。</p>
-                            <p><strong>电视剧集项目：</strong>《藏海传》《四海重明》《又见逍遥》《护心》《追光者》《乌云遇皎月》等。</p>
-                        </div>
-                    </div>
+                <div class="work-info">
+                    <p class="work-cat">院线电影</p>
+                    <h3 class="work-name">《深海》</h3>
+                    <div class="work-tags"><span class="tag">后期制作统筹</span><span class="tag">田晓鹏作品</span></div>
                 </div>
-
-                <!-- Job 3 -->
-                <div class="exp-row">
-                    <div>
-                        <div class="exp-time">2018.01 – 2021.12</div>
-                        <div class="exp-company">北京九零坐标文化传媒</div>
-                    </div>
-                    <div class="exp-content">
-                        <h3 class="serif">剪辑师 & 全流程管理</h3>
-                        <p class="exp-desc">驻扎前期拍摄现场负责视频采集与备份转码，承接定剪、物料输出至送审的全链路管理。熟练运用达芬奇与FCP7对剧本进行深度二次创作，与导演沟通重构场次逻辑，以精准的音乐音效烘托人物内核。</p>
-                        <div class="exp-projects">
-                            <p><strong>代表作品：</strong>《樵夫廖俊波》《黄大年》《说走就走之不说再见》《极速战将》《焕脸》《凤落江湖》等。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Job 4 -->
-                <div class="exp-row">
-                    <div>
-                        <div class="exp-time">2015.09 – 2017.06</div>
-                        <div class="exp-content">
-                            <div class="exp-company" style="margin-bottom: 1rem;">北京中视安达文化传媒</div>
-                            <h3 class="serif" style="font-size: 1.5rem;">剪辑师</h3>
-                            <p class="exp-desc">扎根影视剪辑制作，参与早期多部院线、网剧及MV项目（包含周笔畅MV《强迫症》等），沉淀扎实的视听语言功底与剪辑节奏感。</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
 
-    <!-- 5. About -->
-    <section id="about" class="container">
-        <div class="section-header">
-            <h2 class="serif">About & Stack</h2>
-            <span>[ 职业背景与技术矩阵 ]</span>
-        </div>
-        <div class="about-grid">
-            <div class="about-text serif">
-                <p><strong>北京师范大学计算机专业</strong>的理科底座，叠加近9年从剪辑台到后期总控的摸爬滚打，塑造了我对"感性艺术表达"与"理性工业管线"的双重掌控力。</p>
-                <p>我深谙"实拍风格"视听语言的魅力，擅长在影像中利用冷暖光影的对冲（如温暖烛光与清冷月光的交织）来刻画人物情绪张力。在历史或武侠题材的视觉构建中，我秉持极高的史实还原度与视觉一致性——从角色设定的阶层服饰差异，到中晚明时期线装书的道具考究，乃至传统中式院落的精准空间调度，细节即是质感。</p>
-                <p>面对AIGC的浪潮，我将过往大厂级的视觉标准降维打击至自动化创制。不仅熟练操作各类主流后期剪辑与合成软件，更深度精通利用前沿视频模型（Sora、Kling、Runway）构建 5x5 自动化分镜网格，在剧本二次创作与极验视觉标准的碰撞中，寻找效率与美学的最优解。</p>
-            </div>
-            <div class="skills-section">
-                <div class="skill-group">
-                    <h4>Production & Directing</h4>
-                    <ul>
-                        <li>传统后期全生命周期管线统筹</li>
-                        <li>AIGC 影视自动化创制与视觉开发</li>
-                        <li>剧本情绪重构与二次剪辑创作</li>
-                        <li>多部门（跨国/跨平台）协同进度管理</li>
-                        <li>三视图资产规范与高一致性质控</li>
-                    </ul>
+            <!-- 3. 藏海传 -->
+            <div class="work-card">
+                <div class="poster-wrapper">
+                    <img src="https://img1.doubanio.com/view/photo/l/public/p2908124978.jpg" alt="藏海传">
                 </div>
-                <div class="skill-group">
-                    <h4>Software & Models</h4>
-                    <ul>
-                        <li>DaVinci Resolve / FCP 7 / Premiere</li>
-                        <li>Nuke / Photoshop</li>
-                        <li>Kling / Runway / Sora 等前沿大模型</li>
-                    </ul>
+                <div class="work-info">
+                    <p class="work-cat">电视剧</p>
+                    <h3 class="work-name">《藏海传》</h3>
+                    <div class="work-tags"><span class="tag">后期制片</span><span class="tag">待播期待</span></div>
+                </div>
+            </div>
+
+            <!-- 4. 莫斯科行动 -->
+            <div class="work-card">
+                <div class="poster-wrapper">
+                    <img src="https://img1.doubanio.com/view/photo/l/public/p2897282710.jpg" alt="莫斯科行动">
+                </div>
+                <div class="work-info">
+                    <p class="work-cat">院线电影</p>
+                    <h3 class="work-name">《莫斯科行动》</h3>
+                    <div class="work-tags"><span class="tag">后期统筹</span><span class="tag">动作大片</span></div>
+                </div>
+            </div>
+
+            <!-- 5. 灼灼韶华 -->
+            <div class="work-card">
+                <div class="poster-wrapper">
+                    <!-- 使用占位图，请替换为真实官方海报 -->
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=800" alt="灼灼韶华">
+                </div>
+                <div class="work-info">
+                    <p class="work-cat">电视剧</p>
+                    <h3 class="work-name">《灼灼韶华》</h3>
+                    <div class="work-tags"><span class="tag">后期制片</span><span class="tag">已上线</span></div>
+                </div>
+            </div>
+
+            <!-- 6. 风过留痕 -->
+            <div class="work-card">
+                <div class="poster-wrapper">
+                    <img src="https://img1.doubanio.com/view/photo/l/public/p2892543081.jpg" alt="风过留痕">
+                </div>
+                <div class="work-info">
+                    <p class="work-cat">电视剧</p>
+                    <h3 class="work-name">《风过留痕》</h3>
+                    <div class="work-tags"><span class="tag">后期制片</span><span class="tag">刑侦题材</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. Contact -->
+    <!-- 简略版经历与联系，保持单页结构 -->
+    <section id="experience" class="container">
+        <h2 class="serif" style="font-size: 2.5rem; margin-bottom: 2rem;">EXPERIENCE</h2>
+        <div class="exp-item">
+            <p>2023 - 至今</p>
+            <div>
+                <h3>后期制片 & AI导演</h3>
+                <p>深耕传统影视后期，并主导 AI 漫剧《编外鬼使》及 AI 剧集《蝉3304》的制作管线。</p>
+            </div>
+        </div>
+        <div class="exp-item">
+            <p>2022 - 2023</p>
+            <div>
+                <h3>兔将视觉技术 | 后期制作</h3>
+                <p>参与《深海》、《巨齿鲨2》、《传说》等国内外院线大制作。</p>
+            </div>
+        </div>
+    </section>
+
     <footer id="contact">
-        <div class="container">
-            <h2 class="contact-title serif">Let's Craft<br>The Future.</h2>
-            <div class="contact-links">
-                <a href="tel:15601160596">T. 156 0116 0596 (WeChat)</a>
-                <a href="mailto:873606114@qq.com">E. 873606114@qq.com</a>
-                <span>Loc. 北京市 (Beijing)</span>
-            </div>
-            <div class="footer-credits">
-                <div>&copy; 2026 Li Yifan. All Rights Reserved.</div>
-                <div>Post-Production Producer & AI Director</div>
-            </div>
+        <h2 class="contact-big serif">LET'S CREATE.</h2>
+        <div class="contact-details">
+            <p>WeChat: 15601160596</p>
+            <p>Email: 873606114@qq.com</p>
+            <p>Location: 北京</p>
         </div>
+        <p style="margin-top: 4rem; opacity: 0.5; font-size: 0.8rem;">© 2026 LI YIFAN. All Rights Reserved.</p>
     </footer>
 
 </body>
