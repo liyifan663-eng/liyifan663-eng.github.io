@@ -3,69 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="李轶凡 - 后期制片、AI导演、剪辑指导。9年影视工业经验，AIGC自动化创制领先实践者。代表作：《深海》《莫斯科行动》《藏海传》《编外鬼使》等。">
+    <meta name="keywords" content="后期制片,AI导演,剪辑师,影视后期,AIGC,视觉效果,电影制作,电视剧">
+    <meta name="author" content="李轶凡">
+    <meta property="og:title" content="李轶凡 | 后期制片 · AI导演 · 剪辑指导">
+    <meta property="og:description" content="融合计算机底座与9年影视工业经验的制片人。从院线大片质控到AIGC工业化创制。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://liyifan663-eng.github.io/">
     <title>李轶凡 | 后期制片 · AI导演 · 剪辑指导</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
 
         :root {
-            --bg-base: #F4F1EA; 
-            --text-main: #141414;
-            --text-muted: #666;
+            --bg-base: #F4F1EA; /* 温暖纸感 */
+            --bg-alt: #EBE7DC;
+            --text-main: #1A1A1A;
+            --text-muted: #5A5A5A;
             --accent: #B83A26;
             --border: #D5D1C7;
-            --space-section: 8rem 5%;
+            --space-section: 10rem 5%;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: var(--bg-base); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        h1, h2, h3, .serif { font-family: 'Noto Serif SC', serif; }
+        h1, h2, h3, h4, .serif { font-family: 'Noto Serif SC', serif; }
         a { color: inherit; text-decoration: none; transition: 0.3s; }
 
-        .container { max-width: 1440px; margin: 0 auto; }
+        .container { max-width: 1400px; margin: 0 auto; }
 
-        /* Hero */
-        #hero { min-height: 80vh; padding: 6rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; }
-        .hero-name { font-size: clamp(4rem, 10vw, 9rem); font-weight: 900; line-height: 1; letter-spacing: -0.02em; }
-        .hero-role { font-size: 1.5rem; color: var(--text-muted); margin: 1.5rem 0 4rem; letter-spacing: 0.2em; text-transform: uppercase; }
-        .hero-flex { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: end; }
-        .hero-value { font-size: clamp(1.2rem, 2vw, 1.8rem); font-weight: 400; max-width: 800px; }
-        .cta-btn { padding: 1rem 2.5rem; background: var(--text-main); color: var(--bg-base); border-radius: 50px; font-weight: 500; display: inline-block; }
+        /* 1. Hero Section */
+        #hero { min-height: 90vh; padding: 6rem 5% 4rem; display: flex; flex-direction: column; justify-content: space-between; }
+        .hero-name { font-size: clamp(4.5rem, 10vw, 10rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.02em; }
+        .hero-role { font-size: 1.4rem; color: var(--text-muted); margin: 1.5rem 0; letter-spacing: 0.15em; text-transform: uppercase; }
+        .hero-bottom { display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: end; margin-top: auto; }
+        .hero-value { font-size: clamp(1.4rem, 2.5vw, 2.2rem); font-weight: 500; line-height: 1.4; color: var(--text-main); }
+        .hero-cta-box { display: flex; flex-direction: column; align-items: flex-end; gap: 2rem; }
+        .cta-btn { padding: 1.2rem 3.5rem; background: var(--text-main); color: var(--bg-base); border-radius: 100px; font-weight: 500; display: inline-block; transition: 0.3s; border: 1px solid var(--text-main); cursor: pointer; }
+        .cta-btn:hover { background: transparent; color: var(--text-main); }
 
-        /* Poster Gallery - 作品展示核心区 */
-        #work { padding: var(--space-section); }
-        .section-title { font-size: 3rem; font-weight: 900; margin-bottom: 4rem; border-bottom: 2px solid var(--text-main); padding-bottom: 1rem; display: flex; justify-content: space-between; align-items: flex-end; }
-        .section-title span { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
+        /* 2. Proof Strip */
+        #proof-strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 2.5rem 5%; display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.1em; color: var(--text-muted); text-transform: uppercase; }
 
-        .work-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 3rem; }
+        /* 3. Featured Gallery (大制作海报区) */
+        #featured-gallery { padding: var(--space-section); }
+        .section-tag { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 1rem; display: block; font-weight: 600; }
+        .section-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 5rem; line-height: 1.1; }
         
-        .work-card { position: relative; overflow: hidden; background: #eee; transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1); }
-        .work-card:hover { transform: translateY(-10px); }
-        
-        /* 海报容器 */
-        .poster-wrapper { width: 100%; aspect-ratio: 2/3; overflow: hidden; background-color: #ddd; position: relative; }
-        .poster-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-        .work-card:hover .poster-wrapper img { transform: scale(1.05); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .gallery-item { position: relative; cursor: pointer; }
+        .gallery-poster { width: 100%; aspect-ratio: 2/3; background: #ddd; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--border); }
+        .gallery-poster a { display: block; width: 100%; height: 100%; }
+        .gallery-poster img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .gallery-item:hover img { transform: scale(1.03); }
+        .gallery-info { cursor: pointer; }
+        .gallery-info h4 { font-size: 1.6rem; margin-bottom: 0.4rem; }
+        .gallery-info p { font-size: 0.95rem; color: var(--text-muted); }
+        .gallery-info a { text-decoration: underline; opacity: 0.7; }
+        .gallery-info a:hover { opacity: 1; }
 
-        .work-info { padding: 1.5rem 0; }
-        .work-cat { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.5rem; }
-        .work-name { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .work-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .tag { font-size: 0.7rem; padding: 0.2rem 0.6rem; border: 1px solid var(--border); border-radius: 4px; color: var(--text-muted); }
+        /* 4. Selected Work (文字介绍区) */
+        #work-list { padding: var(--space-section); background-color: var(--bg-alt); }
+        .work-table { border-top: 2px solid var(--text-main); }
+        .work-row { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 4rem; padding: 4rem 0; border-bottom: 1px solid var(--border); align-items: start; }
+        .work-row .cat { font-size: 0.8rem; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+        .work-row .title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+        .work-row .desc { color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; }
+        .work-row .meta { text-align: right; font-size: 0.95rem; color: var(--text-main); font-weight: 500; }
+        .work-row .meta a { text-decoration: underline; opacity: 0.7; }
+        .work-row .meta a:hover { opacity: 1; }
 
-        /* Experience */
-        #experience { padding: var(--space-section); background: #EBE7DC; }
-        .exp-item { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; padding: 3rem 0; border-bottom: 1px solid var(--border); }
-        .exp-item h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        /* 5. Experience / About */
+        #about { padding: var(--space-section); display: grid; grid-template-columns: 1.5fr 1fr; gap: 6rem; }
+        .about-text { font-size: 1.5rem; line-height: 1.8; }
+        .skills-grid { display: flex; flex-direction: column; gap: 3rem; }
+        .skill-group h5 { font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        .skill-group p { font-size: 1.1rem; font-weight: 500; margin-bottom: 0.5rem; }
 
-        /* Contact */
-        #contact { padding: 6rem 5%; background: var(--text-main); color: var(--bg-base); text-align: center; }
-        .contact-big { font-size: clamp(3rem, 7vw, 6rem); font-weight: 900; margin-bottom: 3rem; }
-        .contact-details { display: flex; justify-content: center; gap: 3rem; font-size: 1.2rem; }
+        /* 6. Contact */
+        #contact { padding: 8rem 5% 4rem; background: var(--text-main); color: var(--bg-base); text-align: center; }
+        .contact-h { font-size: clamp(3rem, 8vw, 7rem); font-weight: 900; margin-bottom: 4rem; }
+        .contact-info { display: flex; justify-content: center; gap: 4rem; font-size: 1.3rem; margin-bottom: 8rem; flex-wrap: wrap; }
+        .contact-info a { border-bottom: 1px solid var(--bg-base); padding-bottom: 0.2rem; }
+        .contact-info a:hover { opacity: 0.7; }
+        .footer { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; font-size: 0.8rem; display: flex; justify-content: space-between; text-transform: uppercase; opacity: 0.6; }
 
-        @media (max-width: 768px) {
-            .hero-flex { grid-template-columns: 1fr; }
-            .exp-item { grid-template-columns: 1fr; }
-            .contact-details { flex-direction: column; gap: 1rem; }
+        @media (max-width: 1024px) {
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .hero-bottom { grid-template-columns: 1fr; }
+            .work-row { grid-template-columns: 1fr; gap: 1.5rem; }
+            .work-row .meta { text-align: left; }
+            #about { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -76,126 +103,154 @@
             <h1 class="hero-name serif">李轶凡</h1>
             <p class="hero-role">后期制片 · AI导演 · 剪辑指导</p>
         </div>
-        <div class="hero-flex">
+        <div class="hero-bottom">
             <p class="hero-value serif">
-                9年影视工业经验与AIGC技术的先锋实践者。从院线大片的全流程质控，到AI漫剧的自动化管线构建，我致力于用算法与美学重塑影像。
+                融合北京师范大学计算机底座与9年影视工业经验。从S级院线大片的全流程质控，到AIGC剧集工业化管线的领跑实践，以算法提升效率，以审美重塑叙事。
             </p>
-            <div style="text-align: right;">
-                <a href="#contact" class="cta-btn">合作洽谈</a>
+            <div class="hero-cta-box">
+                <a href="#contact" class="cta-btn">发起合作洽谈</a>
             </div>
         </div>
     </header>
 
-    <section id="work" class="container">
-        <div class="section-title">
-            <h2 class="serif">SELECTED WORKS</h2>
-            <span>作品集海报展</span>
-        </div>
+    <div id="proof-strip" class="container">
+        <div>9年后期工业沉淀</div>
+        <div>AIGC 全管线自动化创制</div>
+        <div>院线级视听交付标准</div>
+        <div>导演级剧本二创能力</div>
+    </div>
 
-        <div class="work-grid">
-            <!-- 1. AI 漫剧 -->
-            <div class="work-card">
-                <div class="poster-wrapper">
-                    <!-- 此处可替换为《编外鬼使》真实海报链接 -->
-                    <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=800" alt="编外鬼使">
+    <section id="featured-gallery" class="container">
+        <span class="section-tag">Key Production</span>
+        <h2 class="section-title serif">大制作与院线代表作</h2>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-poster">
+                    <a href="https://movie.douban.com/subject/35452614/" target="_blank" title="在豆瓣查看《藏海传》详情">
+                        <img src="https://img1.doubanio.com/view/photo/l/public/p2908124978.jpg" alt="藏海传海报">
+                    </a>
                 </div>
-                <div class="work-info">
-                    <p class="work-cat">AIGC / 漫剧</p>
-                    <h3 class="work-name">《编外鬼使》</h3>
-                    <div class="work-tags"><span class="tag">AI导演</span><span class="tag">红果上线</span></div>
+                <div class="gallery-info">
+                    <h4 class="serif">《藏海传》</h4>
+                    <p>郑晓龙导演 · 肖战主演 / 后期制作 | <a href="https://movie.douban.com/subject/35452614/" target="_blank">豆瓣</a></p>
                 </div>
             </div>
-
-            <!-- 2. 电影深海 -->
-            <div class="work-card">
-                <div class="poster-wrapper">
-                    <img src="https://img9.doubanio.com/view/photo/l/public/p2886021467.jpg" alt="电影深海">
+            <div class="gallery-item">
+                <div class="gallery-poster">
+                    <a href="https://movie.douban.com/subject/30194396/" target="_blank" title="在豆瓣查看《深海》详情">
+                        <img src="https://img9.doubanio.com/view/photo/l/public/p2886021467.jpg" alt="深海海报">
+                    </a>
                 </div>
-                <div class="work-info">
-                    <p class="work-cat">院线电影</p>
-                    <h3 class="work-name">《深海》</h3>
-                    <div class="work-tags"><span class="tag">后期制作统筹</span><span class="tag">田晓鹏作品</span></div>
-                </div>
-            </div>
-
-            <!-- 3. 藏海传 -->
-            <div class="work-card">
-                <div class="poster-wrapper">
-                    <img src="https://img1.doubanio.com/view/photo/l/public/p2908124978.jpg" alt="藏海传">
-                </div>
-                <div class="work-info">
-                    <p class="work-cat">电视剧</p>
-                    <h3 class="work-name">《藏海传》</h3>
-                    <div class="work-tags"><span class="tag">后期制片</span><span class="tag">待播期待</span></div>
+                <div class="gallery-info">
+                    <h4 class="serif">《深海》</h4>
+                    <p>田晓鹏导演 · 粒子水墨视效极致作品 / 后期制作 | <a href="https://movie.douban.com/subject/30194396/" target="_blank">豆瓣</a></p>
                 </div>
             </div>
-
-            <!-- 4. 莫斯科行动 -->
-            <div class="work-card">
-                <div class="poster-wrapper">
-                    <img src="https://img1.doubanio.com/view/photo/l/public/p2897282710.jpg" alt="莫斯科行动">
+            <div class="gallery-item">
+                <div class="gallery-poster">
+                    <a href="https://movie.douban.com/subject/34856158/" target="_blank" title="在豆瓣查看《莫斯科行动》详情">
+                        <img src="https://img1.doubanio.com/view/photo/l/public/p2897282710.jpg" alt="莫斯科行动海报">
+                    </a>
                 </div>
-                <div class="work-info">
-                    <p class="work-cat">院线电影</p>
-                    <h3 class="work-name">《莫斯科行动》</h3>
-                    <div class="work-tags"><span class="tag">后期统筹</span><span class="tag">动作大片</span></div>
-                </div>
-            </div>
-
-            <!-- 5. 灼灼韶华 -->
-            <div class="work-card">
-                <div class="poster-wrapper">
-                    <!-- 使用占位图，请替换为真实官方海报 -->
-                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=800" alt="灼灼韶华">
-                </div>
-                <div class="work-info">
-                    <p class="work-cat">电视剧</p>
-                    <h3 class="work-name">《灼灼韶华》</h3>
-                    <div class="work-tags"><span class="tag">后期制片</span><span class="tag">已上线</span></div>
-                </div>
-            </div>
-
-            <!-- 6. 风过留痕 -->
-            <div class="work-card">
-                <div class="poster-wrapper">
-                    <img src="https://img1.doubanio.com/view/photo/l/public/p2892543081.jpg" alt="风过留痕">
-                </div>
-                <div class="work-info">
-                    <p class="work-cat">电视剧</p>
-                    <h3 class="work-name">《风过留痕》</h3>
-                    <div class="work-tags"><span class="tag">后期制片</span><span class="tag">刑侦题材</span></div>
+                <div class="gallery-info">
+                    <h4 class="serif">《莫斯科行动》</h4>
+                    <p>邱礼涛导演 · 刘德华、张涵予主演 / 后期制作 | <a href="https://movie.douban.com/subject/34856158/" target="_blank">豆瓣</a></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 简略版经历与联系，保持单页结构 -->
-    <section id="experience" class="container">
-        <h2 class="serif" style="font-size: 2.5rem; margin-bottom: 2rem;">EXPERIENCE</h2>
-        <div class="exp-item">
-            <p>2023 - 至今</p>
-            <div>
-                <h3>后期制片 & AI导演</h3>
-                <p>深耕传统影视后期，并主导 AI 漫剧《编外鬼使》及 AI 剧集《蝉3304》的制作管线。</p>
+    <section id="work-list">
+        <div class="container">
+            <span class="section-tag">Full Filmography</span>
+            <h2 class="section-title serif">项目详述与AI创制</h2>
+            
+            <div class="work-table">
+                <div class="work-row">
+                    <span class="cat">AIGC Innovation</span>
+                    <div>
+                        <h3 class="title serif">《编外鬼使》 · 《蝉3304：实控人》</h3>
+                        <p class="desc">作为AI导演与AI剪辑师，全面跑通了从AI剧本拆解到自动化分镜生成的工业流。其中《编外鬼使》已上线红果平台，代表了国内AIGC漫剧在高一致性人物表现与叙事节奏上的前沿水平。</p>
+                    </div>
+                    <span class="meta">AI导演 / AI剪辑 | <a href="https://www.hongguoai.com" target="_blank">红果</a></span>
+                </div>
+
+                <div class="work-row">
+                    <span class="cat">Recent Series</span>
+                    <div>
+                        <h3 class="title serif">《金刚不坏》 · 《灼灼韶华》 · 《风过留痕》</h3>
+                        <p class="desc">负责项目制片，包含电视剧《叵测》《大河之水》等多部已上线项目。涵盖了刑侦、生活、古装等多种题材，在保证高产出节奏的同时，确保视听效果符合各平台S级上线标准。</p>
+                    </div>
+                    <span class="meta">后期制片 | <a href="https://www.douban.com" target="_blank">豆瓣</a></span>
+                </div>
+
+                <div class="work-row">
+                    <span class="cat">Upcoming Projects</span>
+                    <div>
+                        <h3 class="title serif">《醒来》 · 《暗夜之光》 · 《漂洋过海来送你》</h3>
+                        <p class="desc">目前处于待播阶段的大制作剧集，涵盖多种题材与制作体量。</p>
+                    </div>
+                    <span class="meta">后期制片</span>
+                </div>
+
+                <div class="work-row">
+                    <span class="cat">Editorial Works</span>
+                    <div>
+                        <h3 class="title serif">《黄大年》 · 《樵夫廖俊波》 · 《焕脸》</h3>
+                        <p class="desc">剪辑师岗位出身的代表作。不仅负责后期流程管理，更深度参与项目，通过镜头语言的精准重构与节奏卡点，增强纪实与悬疑题材的情绪感染力。</p>
+                    </div>
+                    <span class="meta">剪辑 | <a href="https://www.douban.com" target="_blank">豆瓣</a></span>
+                </div>
+
+                <div class="work-row">
+                    <span class="cat">Cinema Works</span>
+                    <div>
+                        <h3 class="title serif">《巨齿鲨2》 · 《传说》 · 《极速战将》</h3>
+                        <p class="desc">参与国内外院线大制作项目，涵盖视效、特效、调色等核心后期环节的全流程管理与质控。</p>
+                    </div>
+                    <span class="meta">后期制作 | <a href="https://www.douban.com" target="_blank">豆瓣</a></span>
+                </div>
             </div>
         </div>
-        <div class="exp-item">
-            <p>2022 - 2023</p>
-            <div>
-                <h3>兔将视觉技术 | 后期制作</h3>
-                <p>参与《深海》、《巨齿鲨2》、《传说》等国内外院线大制作。</p>
+    </section>
+
+    <section id="about" class="container">
+        <div class="about-text serif">
+            <p><strong>技术与艺术的双修背景：</strong>毕业于北京师范大学计算机专业，理性的逻辑思维让我能构建高效、科学的后期工业管线。而近9年的现场采集与定剪经验，又赋予了我对光影与叙事的敏锐直觉。</p>
+            <p><strong>全栈制作管线掌控：</strong>我深谙后期制作的每一个环节。在执导AI项目时，我利用Sora、Kling等模型进行视觉一致性开发；在传统项目中，我精通达芬奇调色流程，确保项目从杀青到上线的完整质控。</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <h5>Production Expertise</h5>
+                <p>后期全流程工业化管理</p>
+                <p>AIGC 影视自动化管线构建</p>
+                <p>剧本二次叙事与节奏重构</p>
+                <p>多部门跨国际协同管理</p>
+            </div>
+            <div class="skill-group">
+                <h5>Tech Stack</h5>
+                <p>Kling / Sora / Runway (AI视频)</p>
+                <p>DaVinci Resolve / Nuke / Photoshop</p>
+                <p>Final Cut Pro / Premiere Pro</p>
+                <p>现代工业化制作流程</p>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <h2 class="contact-big serif">LET'S CREATE.</h2>
-        <div class="contact-details">
-            <p>WeChat: 15601160596</p>
-            <p>Email: 873606114@qq.com</p>
-            <p>Location: 北京</p>
+        <div class="container">
+            <h2 class="contact-h serif">构建影像新边界</h2>
+            <div class="contact-info">
+                <a href="tel:15601160596">T. 156 0116 0596</a>
+                <a href="mailto:873606114@qq.com">E. 873606114@qq.com</a>
+                <span>Loc. 北京 / Beijing</span>
+            </div>
+            <div class="footer">
+                <div>&copy; 2026 LI YIFAN. 版权所有</div>
+                <div>Post-Production Producer & AI Director</div>
+            </div>
         </div>
-        <p style="margin-top: 4rem; opacity: 0.5; font-size: 0.8rem;">© 2026 LI YIFAN. All Rights Reserved.</p>
     </footer>
 
 </body>
