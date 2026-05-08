@@ -66,7 +66,7 @@
         .work-row .desc { color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; }
         .work-row .meta { text-align: right; font-size: 0.95rem; color: var(--text-main); font-weight: 500; }
 
-        /* 5. Experience / About */
+        /* 5. About */
         #about { padding: var(--space-section); display: grid; grid-template-columns: 1.5fr 1fr; gap: 6rem; }
         .about-text { font-size: 1.5rem; line-height: 1.8; }
         .skills-grid { display: flex; flex-direction: column; gap: 3rem; }
@@ -87,6 +87,10 @@
             .work-row { grid-template-columns: 1fr; gap: 1.5rem; }
             .work-row .meta { text-align: left; }
             #about { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -121,38 +125,41 @@
         <div class="gallery-grid">
             <div class="gallery-item">
                 <div class="gallery-poster">
-                    <img src="https://raw.githubusercontent.com/liyifan663-eng/liyifan663-eng.github.io/main/posters/zanghaizhuan.jpg" alt="藏海传">
+                    <img src="posters/zanghaizhuan.jpg" alt="藏海传海报" loading="lazy">
                 </div>
                 <div class="gallery-info">
                     <h4 class="serif">《藏海传》</h4>
-                    <p>年代大戏 · 后期制片</p>
+                    <p>郑晓龙导演 · 肖战主演 / 后期制作</p>
                 </div>
             </div>
+
             <div class="gallery-item">
                 <div class="gallery-poster">
-                    <img src="https://raw.githubusercontent.com/liyifan663-eng/liyifan663-eng.github.io/main/posters/mosikexingdong.jpg" alt="莫斯科行动">
+                    <img src="posters/moscowmission.jpg" alt="莫斯科行动海报" loading="lazy">
                 </div>
                 <div class="gallery-info">
                     <h4 class="serif">《莫斯科行动》</h4>
-                    <p>院线电影 · 后期制作</p>
+                    <p>邱礼涛导演 · 刘德华、张涵予主演 / 后期制作</p>
                 </div>
             </div>
+
             <div class="gallery-item">
                 <div class="gallery-poster">
-                    <img src="https://raw.githubusercontent.com/liyifan663-eng/liyifan663-eng.github.io/main/posters/deepsia.jpg" alt="深海">
+                    <img src="posters/deepsea.jpg" alt="深海海报" loading="lazy">
                 </div>
                 <div class="gallery-info">
                     <h4 class="serif">《深海》</h4>
-                    <p>视效大作 · 后期制作</p>
+                    <p>田晓鹏导演 · 粒子水墨视效极致作品 / 后期制作</p>
                 </div>
             </div>
+
             <div class="gallery-item">
                 <div class="gallery-poster">
-                    <img src="https://raw.githubusercontent.com/liyifan663-eng/liyifan663-eng.github.io/main/posters/zhaozhaoruohua.jpg" alt="灼灼韶华">
+                    <img src="posters/zhaozhaoruohua.jpg" alt="灼灼韶华海报" loading="lazy">
                 </div>
                 <div class="gallery-info">
                     <h4 class="serif">《灼灼韶华》</h4>
-                    <p>年代大戏 · 后期制片</p>
+                    <p>年代大戏 · 热依扎主演 / 后期制作</p>
                 </div>
             </div>
         </div>
@@ -168,7 +175,7 @@
                     <span class="cat">AIGC Innovation</span>
                     <div>
                         <h3 class="title serif">《编外鬼使》 · 《蝉3301：失控人》</h3>
-                        <p class="desc">作为AI导演与AI剪辑师，全面跑通了从AI剧本拆解到自动化分镜生成的工业流。其中《编外鬼使》已上线，代表了国内AIGC漫剧在高一致性人物表现与叙事节奏上的前沿水平。</p>
+                        <p class="desc">作为AI导演与AI剪辑师，全面跑通了从AI剧本拆解到自动化分镜生成的工业流。其中《编外鬼使》已上线红果平台，代表了国内AIGC漫剧在高一致性人物表现与叙事节奏上的前沿水平。</p>
                     </div>
                     <span class="meta">AI导演 / AI剪辑</span>
                 </div>
